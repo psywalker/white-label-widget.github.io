@@ -6,12 +6,90 @@
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Car rental" />
     <title>Car rental</title>
+    <style>
+    @-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
 
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+.spinner-back {
+  display: none;
+  z-index: 10000;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.5);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(1vh * 100);
+  height: calc(var(--vh, 1vh) * 100);
+}
+.spinner-back.active {
+  display: block;
+}
+.spinner-back.blur {
+  background-color: #ffffff;
+}
+
+.spinner {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  color: #c1122a;
+  color: var(--c-primary);
+  width: 64px;
+  height: 64px;
+}
+.spinner__icon {
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+PHN2ZyB4bWxuczpzdmc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjAiIHdpZHRoPSI2NHB4IiBoZWlnaHQ9IjY0cHgiIHZpZXdCb3g9IjAgMCAxMjggMTI4IiB4bWw6c3BhY2U9InByZXNlcnZlIj48Zz48cGF0aCBkPSJNNzAuMSA5LjQybC0xMC43IDkuNHYtNS43N2E1MC44MiA1MC44MiAwIDAgMC00My43IDY4LjIzTDExIDc5LjdsLTEuNSA1LjUzQTU4IDU4IDAgMCAxIDU5LjQgNS44VjB6IiBmaWxsPSIjYzExMjJhIi8+PHBhdGggZD0iTTcwLjEgOS40MmwtMTAuNyA5LjR2LTUuNzdhNTAuODIgNTAuODIgMCAwIDAtNDMuNyA2OC4yM0wxMSA3OS43bC0xLjUgNS41M0E1OCA1OCAwIDAgMSA1OS40IDUuOFYweiIgZmlsbD0iI2MxMTIyYSIgdHJhbnNmb3JtPSJyb3RhdGUoMTIwIDY0IDY0KSIvPjxwYXRoIGQ9Ik03MC4xIDkuNDJsLTEwLjcgOS40di01Ljc3YTUwLjgyIDUwLjgyIDAgMCAwLTQzLjcgNjguMjNMMTEgNzkuN2wtMS41IDUuNTNBNTggNTggMCAwIDEgNTkuNCA1LjhWMHoiIGZpbGw9IiNjMTEyMmEiIHRyYW5zZm9ybT0icm90YXRlKDI0MCA2NCA2NCkiLz48L2c+PC9zdmc+) no-repeat center;
+  -webkit-animation: spin 3240ms linear infinite;
+          animation: spin 3240ms linear infinite;
+  width: 100%;
+  height: 100%;
+}
+.spinner--absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+.message-page__icon {
+  margin: 16px auto;
+  width: 64px;
+  height: 64px;
+  font-size: 64px;
+}
+      
+  .white-label-widget-container {
+     position: relative;
+     min-height: 672px;
+  }
+    </style>
   </head>
   <body>
 
     <h1>Cars for rent</h1>
-
+    <div class="white-label-widget-container">
     <script
       async
       class="rv-rentals-widget"
@@ -20,7 +98,7 @@
       data-theme="light"
       data-title="White Label Booking"
     ></script>
-
+    </div>
     <p>
       Call by phone 8-000-000-000
     </p>
