@@ -7,7 +7,7 @@
     <meta name="description" content="Car rental" />
     <title>Car rental</title>
     <style>
-    @-webkit-keyframes spin {
+@-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0);
             transform: rotate(0);
@@ -31,13 +31,12 @@
 .spinner-back {
   display: none;
   z-index: 10000;
-  position: fixed;
+  position: absolute;
   background-color: rgba(255, 255, 255, 0.5);
   top: 0;
   left: 0;
-  width: 100vw;
-  height: calc(1vh * 100);
-  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  height: 100%;
 }
 .spinner-back.active {
   display: block;
@@ -73,42 +72,50 @@
           transform: translateX(-50%) translateY(-50%);
 }
 
-.message-page__icon {
-  margin: 16px auto;
-  width: 64px;
-  height: 64px;
-  font-size: 64px;
-}
       
   .white-label-widget-container {
      position: relative;
      min-height: 708px;
   }
+      
+.white-label-widget-spinner--dark-theme {
+  background: none;
+}
     </style>
   </head>
   <body>
 
     <h1>Cars for rent</h1>
     <div class="white-label-widget-container">
-    <script
-      async
-      class="rv-rentals-widget"
-      src="https://atlantis.cw-rv.dev.quintegro.net/assets/white-label/widget.min.js"
-      data-owner-id="test"
-      data-theme="dark"
-      data-title="White Label Booking"
-    ></script>
+      <div class="white-label-widget-spinner white-label-widget-spinner--dark-theme spinner-back active">
+        <div class="spinner spinner--absolute">
+          <div class="spinner__icon"></div>
+        </div>
+      </div>
+      <script
+        async
+        class="rv-rentals-widget"
+        src="https://atlantis.cw-rv.dev.quintegro.net/assets/white-label/widget.min.js"
+        data-owner-id="test"
+        data-theme="dark"
+        data-title="White Label Booking"
+      ></script>
     </div>
     
-        <div class="white-label-widget-container">
-    <script
-      async
-      class="rv-rentals-widget"
-      src="https://atlantis.cw-rv.dev.quintegro.net/assets/white-label/widget.min.js"
-      data-owner-id="test"
-      data-theme="light"
-      data-title="White Label Booking"
-    ></script>
+    <div class="white-label-widget-container">
+      <div class="white-label-widget-spinner spinner-back active">
+        <div class="spinner spinner--absolute">
+          <div class="spinner__icon"></div>
+        </div>
+      </div>
+      <script
+        async
+        class="rv-rentals-widget"
+        src="https://atlantis.cw-rv.dev.quintegro.net/assets/white-label/widget.min.js"
+        data-owner-id="test"
+        data-theme="light"
+        data-title="White Label Booking"
+      ></script>
     </div>
     <p>
       Call by phone 8-000-000-000
